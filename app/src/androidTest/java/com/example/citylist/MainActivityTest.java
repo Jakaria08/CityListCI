@@ -46,10 +46,12 @@ public class MainActivityTest {
     public void testClearCity(){
         onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list
         onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Edmonton")); //Type a city name
+        closeSoftKeyboard()
         onView(withId(R.id.button_confirm)).perform(click()); //Confirm the city name and add to the list
         //Add another city to the list
         onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list
         onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Toronto")); //Type a city name
+        closeSoftKeyboard()
         onView(withId(R.id.button_confirm)).perform(click()); //Confirm the city name and add to the list
         //Clear the list
         onView(withId(R.id.button_clear)).perform(click());
@@ -60,6 +62,7 @@ public class MainActivityTest {
     public void testListView(){
         onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list
         onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Edmonton")); //Type a city name
+        closeSoftKeyboard()
         onView(withId(R.id.button_confirm)).perform(click()); //Confirm the city name and add to the list
 
         onData(anything()).inAdapterView(withId(R.id.city_list)).atPosition(0).
@@ -70,6 +73,7 @@ public class MainActivityTest {
     public void testListViewClickAndBack(){
         onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list
         onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Edmonton")); //Type a city name
+        closeSoftKeyboard()
         onView(withId(R.id.button_confirm)).perform(click()); //Confirm the city name and add to the list
 
         onData(anything()).inAdapterView(withId(R.id.city_list)).atPosition(0).perform(click()); //Check the content on the list - no content in this case
