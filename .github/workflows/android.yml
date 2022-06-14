@@ -33,7 +33,7 @@ jobs:
       uses: reactivecircus/android-emulator-runner@v2.14.3
       with:
         api-level: 29
-        script: ./gradlew connectedAndroidTest
+        script: ./gradlew connectedCheck
 
     - name: Android Test Report
       uses: asadmansr/android-test-report-action@v1.2.0
