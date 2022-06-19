@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -29,12 +29,6 @@ jobs:
     - name: Unit Test
       run: ./gradlew testDebugUnitTest
       
-    - name: Instrumentation Tests
-      uses: reactivecircus/android-emulator-runner@v2.14.3
-      with:
-        api-level: 29
-        script: ./gradlew connectedCheck
-
     - name: Android Test Report
       uses: asadmansr/android-test-report-action@v1.2.0
       if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
